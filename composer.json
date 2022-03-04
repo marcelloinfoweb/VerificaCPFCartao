@@ -1,0 +1,22 @@
+{
+    "name": "funarbe/module-verificacpfcartao",
+    "description": "Verifica Se CPF do cart\u00e3o \u00e9 o mesmo do cliente cadastrado",
+    "type": "magento2-module",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mage2Gen",
+            "email": "info@mage2gen.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Funarbe\\VerificaCPFCartao\\": ""
+        }
+    }
+}
