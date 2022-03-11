@@ -37,14 +37,14 @@ class VerificaCpfCartao extends \Magento\Backend\Block\Template
         $order = $this->orderRepository->get($orderId);
         $additionalInformation = $order->getPayment()->getAdditionalInformation();
         $cpfCliente = $order->getCustomerTaxvat();
-        $nomeCliente = $order->getCustomerFirstname();
+        $nomeCliente = strtolower($order->getCustomerFirstname());
 
         if (!array_key_exists('mestremagecc_cpf', $additionalInformation)) {
             return '';
         }
 
         $cpfCartao = $additionalInformation['mestremagecc_cpf'];
-        $nomeFullCartao = $additionalInformation['cielo_credit_name'];
+        $nomeFullCartao = strtolower($additionalInformation['fullname']);
 
         $nome = explode(' ', $nomeFullCartao);
         $nomeCartao = $nome['0'];
@@ -72,4 +72,3 @@ class VerificaCpfCartao extends \Magento\Backend\Block\Template
             </section>";
     }
 }
-
